@@ -1,13 +1,16 @@
 // function for generation array
-function createArray()
+function createArray(userArray, min, max)
 {
-
+    for (let i = 0; i < userArray.length; i++)
+    {
+        userArray[i] = Math.floor(Math.random()* (max - min + 1)) + min;
+    }
 }
 
 // function for print array
-function printArray()
+function printArray(userArray)
 {
-
+    console.log(`\nYour full array => ${userArray.join(", ")}`);
 }
 
 //
@@ -49,6 +52,11 @@ function myMin()
 // main function
 function main()
 {
+    const sizeArray = 20;
+    const userArray = new Array(sizeArray);
+
+    createArray(userArray, -50, 50);
+    printArray(userArray);
 
 }
 
