@@ -32,6 +32,12 @@ function myReduce()
 }
 
 //
+function myFindElement()
+{
+    
+}
+
+//
 function myBubbleSort()
 {
 
