@@ -34,7 +34,7 @@ function myReduce()
 //
 function myFindElement()
 {
-    
+
 }
 
 //
@@ -51,6 +51,12 @@ function myMax()
 
 // function for search min number in an array
 function myMin()
+{
+
+}
+
+// function for search Arithmetic Mean in an array
+function myArithmeticMean()
 {
 
 }
