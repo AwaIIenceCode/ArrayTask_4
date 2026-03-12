@@ -76,9 +76,16 @@ function myMin(userArray)
 }
 
 // function for search Arithmetic Mean in an array
-function myArithmeticMean()
+function myArithmeticMean(userArray)
 {
+    let sumAllNumbers = 0;
 
+    for (let i = 0; i < userArray.length; i++)
+    {
+        sumAllNumbers += userArray[i];
+    }
+
+    return sumAllNumbers / userArray.length;
 }
 
 // main function
@@ -90,12 +97,14 @@ function main()
     createArray(userArray, -50, 50);
     printArray(userArray);
 
-    myMax(userArray);
-    printArray(userArray);
+    const maxNumberInArray = myMax(userArray);
+    console.log(`Max number in array => ${maxNumberInArray}`);
 
-    myMin(userArray);
-    printArray(userArray);
+    const minNumberInArray = myMin(userArray);
+    console.log(`Min number in array => ${minNumberInArray}`);
 
+    const arithmeticMean = myArithmeticMean(userArray);
+    console.log(`Aritmetic mean in array => ${arithmeticMean}`);
 }
 
 main();
