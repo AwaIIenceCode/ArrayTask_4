@@ -38,9 +38,20 @@ function myFindElement()
 }
 
 //
-function myBubbleSort()
+function myBubbleSort(userArray)
 {
-
+    for (let i = 0; i < userArray.length; i++)
+    {
+        for (let j = 0; j < userArray.length; j++)
+        {
+            if (userArray[j] < userArray[j + 1])
+                {
+                    let tempNumber = userArray[j];
+                    userArray[j] = userArray[j + 1];
+                    userArray[j + 1] = tempNumber;
+                }
+        }
+    }
 }
 
 // function for search max number in an array
@@ -125,6 +136,9 @@ function main()
 
     const arithmeticMean = myArithmeticMean(userArray);
     console.log(`Aritmetic mean in array => ${arithmeticMean}`);
+
+    myBubbleSort(userArray);
+    printArray(userArray);
 }
 
 main();
