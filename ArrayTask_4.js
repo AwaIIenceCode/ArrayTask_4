@@ -62,7 +62,17 @@ function myMax(userArray)
 // function for search min number in an array
 function myMin()
 {
+    let minNumberInArray = userArray[0];
 
+    for (let i = 0; i < userArray.length; i++)
+    {
+        if (userArray[i] < minNumberInArray)
+        {
+            minNumberInArray = userArray[i];
+        }
+    }
+
+    return minNumberInArray;
 }
 
 // function for search Arithmetic Mean in an array
