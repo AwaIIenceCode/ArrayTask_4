@@ -60,7 +60,7 @@ function myMax(userArray)
 }
 
 // function for search min number in an array
-function myMin()
+function myMin(userArray)
 {
     let minNumberInArray = userArray[0];
 
@@ -91,6 +91,9 @@ function main()
     printArray(userArray);
 
     myMax(userArray);
+    printArray(userArray);
+
+    myMin(userArray);
     printArray(userArray);
 
 }
