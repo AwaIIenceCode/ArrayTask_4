@@ -37,12 +37,12 @@ function myFindElement()
 
 }
 
-//
+// method for sorting an array using the bubble sort algorithm
 function myBubbleSort(userArray)
 {
     for (let i = 0; i < userArray.length; i++)
     {
-        for (let j = 0; j < userArray.length; j++)
+        for (let j = 0; j < userArray.length - (i + 1); j++)
         {
             if (userArray[j] < userArray[j + 1])
                 {
