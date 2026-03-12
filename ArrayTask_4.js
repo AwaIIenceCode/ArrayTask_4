@@ -44,9 +44,19 @@ function myBubbleSort()
 }
 
 // function for search max number in an array
-function myMax()
+function myMax(userArray)
 {
+    let maxNumberInArray = userArray[0];
 
+    for (let i = 0; i < userArray.length; i++)
+    {
+        if (userArray[i] > maxNumberInArray)
+        {
+            maxNumberInArray = userArray[i];
+        }
+    }
+
+    return maxNumberInArray;
 }
 
 // function for search min number in an array
@@ -68,6 +78,9 @@ function main()
     const userArray = new Array(sizeArray);
 
     createArray(userArray, -50, 50);
+    printArray(userArray);
+
+    myMax(userArray);
     printArray(userArray);
 
 }
