@@ -40,6 +40,8 @@ function myFindElement()
 // method for sorting an array using the bubble sort algorithm
 function myBubbleSort(userArray)
 {
+    let swapped = false;
+
     for (let i = 0; i < userArray.length; i++)
     {
         for (let j = 0; j < userArray.length - (i + 1); j++)
@@ -49,8 +51,13 @@ function myBubbleSort(userArray)
                     let tempNumber = userArray[j];
                     userArray[j] = userArray[j + 1];
                     userArray[j + 1] = tempNumber;
+                    
+                    swapped = true;
                 }
         }
+
+        if (!swapped) break;
+        swapped = false;
     }
 }
 
