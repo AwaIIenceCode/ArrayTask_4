@@ -88,13 +88,33 @@ function myArithmeticMean(userArray)
     return sumAllNumbers / userArray.length;
 }
 
-// main function
+// for start methods
+function runAction()
+{
+
+}
+ 
+// main function 
 function main()
 {
     const sizeArray = 20;
     const userArray = new Array(sizeArray);
-
     createArray(userArray, -50, 50);
+
+    console.log("Welcome to my program on working with arrays");
+    console.log("Select the action with the array that you need =>");
+    console.log
+                (
+                "\nPress "/1/"" +
+                "\nPress "/2/"" +
+                "\nPress "/3/"" +
+                "\nPress "/4/"" +
+                "\nPress "/5/"" +
+                "\nPress "/7/"" +
+                "\nPress "/8/"" +
+                "\nPress "/9/""
+                );
+    
     printArray(userArray);
 
     const maxNumberInArray = myMax(userArray);
