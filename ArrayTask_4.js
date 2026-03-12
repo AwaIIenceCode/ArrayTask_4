@@ -48,7 +48,7 @@ function myMax(userArray)
 {
     let maxNumberInArray = userArray[0];
 
-    for (let i = 0; i < userArray.length; i++)
+    for (let i = 1; i < userArray.length; i++)
     {
         if (userArray[i] > maxNumberInArray)
         {
@@ -64,7 +64,7 @@ function myMin(userArray)
 {
     let minNumberInArray = userArray[0];
 
-    for (let i = 0; i < userArray.length; i++)
+    for (let i = 1; i < userArray.length; i++)
     {
         if (userArray[i] < minNumberInArray)
         {
