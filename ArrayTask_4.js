@@ -35,7 +35,7 @@ function myFilter(userArray, callback)
     {
         if (callback(userArray[i]))
         {
-            result[i] = userArray[i];
+            result.push(userArray[i]);
         }
     }
 
