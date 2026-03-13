@@ -14,9 +14,17 @@ function printArray(userArray)
 }
 
 //
-function myMap()
+function myMap(userArray, callback)
 {
-    
+    let result = new Array(userArray.length);
+
+    for (let i = 0; i < userArray.length; i++)
+    {
+        result[i] = callback(userArray[i]);
+    }
+
+    //return result;
+    console.log(`\nYour full array with map => ${result.join(", ")}`);
 }
 
 //
@@ -146,6 +154,9 @@ function main()
 
     myBubbleSort(userArray);
     printArray(userArray);
+
+    let doubled = myMap(userArray, element => element * 2);
+    console.log(doubled);
 }
 
 main();
