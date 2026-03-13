@@ -55,10 +55,18 @@ function myReduce(userArray, callback, initialValue)
     return accumulator;
 }
 
-//
-function myFindElement()
+// A custom FindElement method written using callbacks 
+function myFindElement(userArray, callback)
 {
+    for (let i = 0; i < userArray.length; i++)
+    {
+        if (callback(userArray[i]))
+        {
+            return userArray[i];
+        }
+    }
 
+    return undefined;
 }
 
 // method for sorting an array using the bubble sort algorithm
@@ -179,6 +187,9 @@ function main()
 
     let accumulatorAllElement = myReduce(userArray, (accumulator, element) => accumulator + element, 0);
     console.log(`\nYour result with use reduce method  => ${accumulatorAllElement}`);
+
+    let foundElement = myFindElement(userArray, element => element > 20);
+    console.log(`\nYour result with use find method  => ${foundElement}`);
 }
 
 main();
