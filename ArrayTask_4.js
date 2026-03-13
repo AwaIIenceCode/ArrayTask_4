@@ -13,7 +13,7 @@ function printArray(userArray)
     console.log(`\nYour full array => ${userArray.join(", ")}`);
 }
 
-//
+// A custom map method written using callbacks 
 function myMap(userArray, callback)
 {
     let result = new Array(userArray.length);
