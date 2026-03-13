@@ -26,10 +26,20 @@ function myMap(userArray, callback)
     return result;
 }
 
-//
-function myFilter()
+// A custom filter method written using callbacks
+function myFilter(userArray, callback)
 {
+    let result = [];
 
+    for (let i = 0; i < userArray.length; i++)
+    {
+        if (callback(userArray[i]))
+        {
+            result[i] = userArray[i];
+        }
+    }
+
+    return result;
 }
 
 //
@@ -156,6 +166,9 @@ function main()
 
     let doubled = myMap(userArray, element => element * 2);
     console.log(`\nYour full array with map => ${doubled.join(", ")}`);
+
+    let positiveNumbers = myFilter(userArray, element => element > 0);
+    console.log(`\nYour full array with use filter => ${positiveNumbers.join(", ")}`);
 }
 
 main();
