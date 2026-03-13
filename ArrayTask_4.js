@@ -23,8 +23,7 @@ function myMap(userArray, callback)
         result[i] = callback(userArray[i]);
     }
 
-    //return result;
-    console.log(`\nYour full array with map => ${result.join(", ")}`);
+    return result;
 }
 
 //
@@ -156,7 +155,7 @@ function main()
     printArray(userArray);
 
     let doubled = myMap(userArray, element => element * 2);
-    console.log(doubled);
+    console.log(`\nYour full array with map => ${doubled.join(", ")}`);
 }
 
 main();
