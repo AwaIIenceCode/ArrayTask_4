@@ -42,13 +42,12 @@ function myFilter(userArray, callback)
     return result;
 }
 
-//
+// A custom reduce method written using callbacks 
 function myReduce(userArray, callback, initialValue)
 {
     let accumulator = initialValue !== undefined ? initialValue : 0;
 
-
-    for (let i = initialValue; i < userArray.length; i++)
+    for (let i = 0; i < userArray.length; i++)
     {
         accumulator = callback(accumulator, userArray[i]);
     }
