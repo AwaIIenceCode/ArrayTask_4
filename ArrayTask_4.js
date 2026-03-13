@@ -43,9 +43,17 @@ function myFilter(userArray, callback)
 }
 
 //
-function myReduce()
+function myReduce(userArray, callback, initialValue)
 {
+    let accumulator = initialValue !== undefined ? initialValue : 0;
 
+
+    for (let i = initialValue; i < userArray.length; i++)
+    {
+        accumulator = callback(accumulator, userArray[i]);
+    }
+
+    return accumulator;
 }
 
 //
@@ -169,6 +177,9 @@ function main()
 
     let positiveNumbers = myFilter(userArray, element => element > 0);
     console.log(`\nYour full array with use filter => ${positiveNumbers.join(", ")}`);
+
+    let accumulatorAllElement = myReduce(userArray, (accumulator, element) => accumulator + element, 0);
+    console.log(`\nYour result with use reduce method  => ${accumulatorAllElement}`);
 }
 
 main();
