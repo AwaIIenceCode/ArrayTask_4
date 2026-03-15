@@ -143,18 +143,15 @@ function runAction()
 {
     const actions = 
     {
-        1: { name: "myMax", handler: someFunction },
-        2: { name: "myMin", handler: someFunction },
-        3: { name: "myArithmeticMean", handler: someFunction },
-        4: { name: "myBubbleSort", handler: someFunction },
-        5: { name: "myMap", handler: someFunction },
-        6: { name: "myFilter", handler: someFunction },
-        7: { name: "myReduce", handler: someFunction },
-        8: { name: "myFindElement", handler: someFunction },
-        
-    
-    
-    
+        1: { name: "myMax", handler: someFunction},
+        2: { name: "myMin", handler: someFunction},
+        3: { name: "myArithmeticMean", handler: someFunction},
+        4: { name: "myBubbleSort", handler: someFunction},
+        5: { name: "myMap", handler: someFunction},
+        6: { name: "myFilter", handler: someFunction},
+        7: { name: "myReduce", handler: someFunction},
+        8: { name: "myFindElement", handler: someFunction},
+        9: { name: "print array", handler: someFunction}
     };
 }
  
@@ -165,45 +162,38 @@ function main()
     const userArray = new Array(sizeArray);
     createArray(userArray, -50, 50);
 
-    console.log("Welcome to my program on working with arrays");
-    console.log("Select the action with the array that you need =>");
-    console.log
-                (
-                "\nPress "/1/"" +
-                "\nPress "/2/"" +
-                "\nPress "/3/"" +
-                "\nPress "/4/"" +
-                "\nPress "/5/"" +
-                "\nPress "/7/"" +
-                "\nPress "/8/"" +
-                "\nPress "/9/""
-                );
-    
-    printArray(userArray);
+    let userChoice;
 
-    const maxNumberInArray = myMax(userArray);
-    console.log(`Max number in array => ${maxNumberInArray}`);
+    while (true)
+    {
+        console.log(
+            "\nPress \"1\" for find max number" +
+            "\nPress \"2\" for find min number" +
+            "\nPress \"3\" for find arithmetic mean" +
+            "\nPress \"4\" for bubble sort" +
+            "\nPress \"5\" for map (multiply by 2)" +
+            "\nPress \"6\" for filter (positive numbers)" +
+            "\nPress \"7\" for reduce (sum of all elements)" +
+            "\nPress \"8\" for find first element > 20" +
+            "\nPress \"9\" for print your array" +
+            "\nPress \"10\" for exit"
+        );
 
-    const minNumberInArray = myMin(userArray);
-    console.log(`Min number in array => ${minNumberInArray}`);
+    userChoice = Number(prompt("\nEnter your choice -> "));
 
-    const arithmeticMean = myArithmeticMean(userArray);
-    console.log(`Aritmetic mean in array => ${arithmeticMean}`);
+    if (userChoice === 10) return;
 
-    myBubbleSort(userArray);
-    printArray(userArray);
+    const action = action[userChoice];
 
-    let doubled = myMap(userArray, element => element * 2);
-    console.log(`\nYour full array with map => ${doubled.join(", ")}`);
+    if (!action) 
+    {
+        console.log("Invalid choice");
+        continue;
+    }
 
-    let positiveNumbers = myFilter(userArray, element => element > 0);
-    console.log(`\nYour full array with use filter => ${positiveNumbers.join(", ")}`);
+    runAction(action);
 
-    let accumulatorAllElement = myReduce(userArray, (accumulator, element) => accumulator + element, 0);
-    console.log(`\nYour result with use reduce method  => ${accumulatorAllElement}`);
-
-    let foundElement = myFindElement(userArray, element => element > 20);
-    console.log(`\nYour result with use find method  => ${foundElement}`);
+    }
 }
 
 main();
