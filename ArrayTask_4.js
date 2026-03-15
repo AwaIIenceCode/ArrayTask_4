@@ -141,7 +141,21 @@ function myArithmeticMean(userArray)
 // for start methods
 function runAction()
 {
-
+    const actions = 
+    {
+        1: { name: "myMax", handler: someFunction },
+        2: { name: "myMin", handler: someFunction },
+        3: { name: "myArithmeticMean", handler: someFunction },
+        4: { name: "myBubbleSort", handler: someFunction },
+        5: { name: "myMap", handler: someFunction },
+        6: { name: "myFilter", handler: someFunction },
+        7: { name: "myReduce", handler: someFunction },
+        8: { name: "myFindElement", handler: someFunction },
+        
+    
+    
+    
+    };
 }
  
 // main function 
