@@ -139,8 +139,18 @@ function myArithmeticMean(userArray)
 }
 
 // for start methods
-function runAction()
+function runAction(action)
 {
+    action.handler();
+}
+ 
+// main function 
+function main()
+{
+    const sizeArray = 20;
+    const userArray = new Array(sizeArray);
+    createArray(userArray, -50, 50);
+
     const actions = 
     {
         1: { name: "myMax", handler: () => console.log(myMax(userArray)) },
@@ -153,17 +163,8 @@ function runAction()
         8: { name: "myFindElement", handler: () => console.log(myFindElement(userArray)) },
         9: { name: "print array", handler: () => console.log(printArray(userArray)) }
     };
-}
- 
-// main function 
-function main()
-{
-    const sizeArray = 20;
-    const userArray = new Array(sizeArray);
-    createArray(userArray, -50, 50);
 
     let userChoice;
-    const action = actions[userChoice];
 
     while (true)
     {
@@ -182,8 +183,9 @@ function main()
 
     userChoice = Number(prompt("\nEnter your choice -> "));
 
-    if (userChoice === 10) return;
+    const action = actions[userChoice];
 
+    if (userChoice === 10) return;
 
     if (!action) 
     {
