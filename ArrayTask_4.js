@@ -143,15 +143,15 @@ function runAction()
 {
     const actions = 
     {
-        1: { name: "myMax", handler: someFunction},
-        2: { name: "myMin", handler: someFunction},
-        3: { name: "myArithmeticMean", handler: someFunction},
-        4: { name: "myBubbleSort", handler: someFunction},
-        5: { name: "myMap", handler: someFunction},
-        6: { name: "myFilter", handler: someFunction},
-        7: { name: "myReduce", handler: someFunction},
-        8: { name: "myFindElement", handler: someFunction},
-        9: { name: "print array", handler: someFunction}
+        1: { name: "myMax", handler: myMax},
+        2: { name: "myMin", handler: myMin},
+        3: { name: "myArithmeticMean", handler: myArithmeticMean},
+        4: { name: "myBubbleSort", handler: myBubbleSort},
+        5: { name: "myMap", handler: myMap},
+        6: { name: "myFilter", handler: myFilter},
+        7: { name: "myReduce", handler: myReduce},
+        8: { name: "myFindElement", handler: myFindElement},
+        9: { name: "print array", handler: printArray}
     };
 }
  
@@ -183,7 +183,7 @@ function main()
 
     if (userChoice === 10) return;
 
-    const action = action[userChoice];
+    const action = actions[userChoice];
 
     if (!action) 
     {
