@@ -1,3 +1,5 @@
+const prompt = require("prompt-sync")();
+
 // function for generation array
 function createArray(userArray, min, max)
 {
