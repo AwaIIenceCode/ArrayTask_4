@@ -155,12 +155,22 @@ function main()
 
     const actions = 
     {
-        1: { name: "myMax", handler: () => console.log(myMax(userArray)) },
+        1: { name: "myMin", handler: () => console.log(myMax(userArray)) },
         2: { name: "myMin", handler: () => console.log(myMin(userArray)) },
         3: { name: "myArithmeticMean", handler: () => console.log(myArithmeticMean(userArray)) },
         4: { name: "myBubbleSort", handler: () => console.log(myBubbleSort(userArray)) },
-        5: { name: "myMap", handler: () => console.log(myMap(userArray)) },
-        6: { name: "myFilter", handler: () => console.log(myFilter(userArray)) },
+        5: { name: "myMax", handler: () => 
+            {
+                let multiplier = Number(readline.question("Enter multiplier -> "));
+                let result = myMap(userArray, element => element * multiplier);
+                console.log(`Result: ${result.join(", ")}`); 
+            }},
+        6: { name: "myFilter", handler: () => 
+            {
+                let threshold = Number(readline.question("Enter threshold -> "));
+                let result = myFilter(userArray, element => element > threshold);
+                console.log(`Result: ${result.join(", ")}`);
+            }},
         7: { name: "myReduce", handler: () => console.log(myReduce(userArray)) },
         8: { name: "myFindElement", handler: () => console.log(myFindElement(userArray)) },
         9: { name: "print array", handler: () => console.log(printArray(userArray)) }
