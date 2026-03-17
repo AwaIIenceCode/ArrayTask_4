@@ -171,8 +171,18 @@ function main()
                 let result = myFilter(userArray, element => element > threshold);
                 console.log(`Result: ${result.join(", ")}`);
             }},
-        7: { name: "myReduce", handler: () => console.log(myReduce(userArray)) },
-        8: { name: "myFindElement", handler: () => console.log(myFindElement(userArray)) },
+        7: { name: "myReduce", handler: () =>
+            { 
+                let initialUserValue = Number(readline.question("Enter initial value -> ")); 
+                let result = myReduce(userArray, (accumulator, element) => accumulator + element, initialUserValue);
+                console.log(`Result: ${result.join(", ")}`);
+            }},
+        8: { name: "myFindElement", handler: () =>
+            {
+                let userNumberFound = Number(readline.question("Enter your number that you want to find ->"));
+                let result = myFindElement(userArray, element => element > userNumberFound);
+                console.log(`Result: ${result.join(", ")}`);
+            }},
         9: { name: "print array", handler: () => console.log(printArray(userArray)) }
     };
 
