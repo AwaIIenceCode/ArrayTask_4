@@ -183,9 +183,9 @@ function main()
 
     userChoice = Number(prompt("\nEnter your choice -> "));
 
-    const action = actions[userChoice];
-
     if (userChoice === 10) return;
+
+    const action = actions[userChoice];
 
     if (!action) 
     {
