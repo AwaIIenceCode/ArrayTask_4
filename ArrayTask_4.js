@@ -183,7 +183,7 @@ function main()
                 let result = myFindElement(userArray, element => element > userNumberFound);
                 console.log(`Result: ${result.join(", ")}`);
             }},
-        9: { name: "print array", handler: () => console.log(printArray(userArray)) }
+        9: { name: "print array", handler: () => (printArray(userArray)) }
     };
 
     let userChoice;
