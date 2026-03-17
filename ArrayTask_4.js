@@ -143,15 +143,15 @@ function runAction()
 {
     const actions = 
     {
-        1: { name: "myMax", handler: myMax},
-        2: { name: "myMin", handler: myMin},
-        3: { name: "myArithmeticMean", handler: myArithmeticMean},
-        4: { name: "myBubbleSort", handler: myBubbleSort},
-        5: { name: "myMap", handler: myMap},
-        6: { name: "myFilter", handler: myFilter},
-        7: { name: "myReduce", handler: myReduce},
-        8: { name: "myFindElement", handler: myFindElement},
-        9: { name: "print array", handler: printArray}
+        1: { name: "myMax", handler: () => console.log(myMax(userArray)) },
+        2: { name: "myMin", handler: () => console.log(myMin(userArray)) },
+        3: { name: "myArithmeticMean", handler: () => console.log(myArithmeticMean(userArray)) },
+        4: { name: "myBubbleSort", handler: () => console.log(myBubbleSort(userArray)) },
+        5: { name: "myMap", handler: () => console.log(myMap(userArray)) },
+        6: { name: "myFilter", handler: () => console.log(myFilter(userArray)) },
+        7: { name: "myReduce", handler: () => console.log(myReduce(userArray)) },
+        8: { name: "myFindElement", handler: () => console.log(myFindElement(userArray)) },
+        9: { name: "print array", handler: () => console.log(printArray(userArray)) }
     };
 }
  
@@ -163,6 +163,7 @@ function main()
     createArray(userArray, -50, 50);
 
     let userChoice;
+    const action = actions[userChoice];
 
     while (true)
     {
@@ -183,7 +184,6 @@ function main()
 
     if (userChoice === 10) return;
 
-    const action = actions[userChoice];
 
     if (!action) 
     {
