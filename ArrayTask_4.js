@@ -161,25 +161,25 @@ function main()
         4: { name: "myBubbleSort", handler: () => console.log(myBubbleSort(userArray)) },
         5: { name: "myMax", handler: () => 
             {
-                let multiplier = Number(readline.question("Enter multiplier -> "));
+                let multiplier = Number(prompt("Enter multiplier -> "));
                 let result = myMap(userArray, element => element * multiplier);
                 console.log(`Result: ${result.join(", ")}`); 
             }},
         6: { name: "myFilter", handler: () => 
             {
-                let threshold = Number(readline.question("Enter threshold -> "));
+                let threshold = Number(prompt("Enter threshold -> "));
                 let result = myFilter(userArray, element => element > threshold);
                 console.log(`Result: ${result.join(", ")}`);
             }},
         7: { name: "myReduce", handler: () =>
             { 
-                let initialUserValue = Number(readline.question("Enter initial value -> ")); 
+                let initialUserValue = Number(prompt("Enter initial value -> ")); 
                 let result = myReduce(userArray, (accumulator, element) => accumulator + element, initialUserValue);
                 console.log(`Result: ${result.join(", ")}`);
             }},
         8: { name: "myFindElement", handler: () =>
             {
-                let userNumberFound = Number(readline.question("Enter your number that you want to find ->"));
+                let userNumberFound = Number(prompt("Enter your number that you want to find ->"));
                 let result = myFindElement(userArray, element => element > userNumberFound);
                 console.log(`Result: ${result.join(", ")}`);
             }},
@@ -195,10 +195,10 @@ function main()
             "\nPress \"2\" for find min number" +
             "\nPress \"3\" for find arithmetic mean" +
             "\nPress \"4\" for bubble sort" +
-            "\nPress \"5\" for map (multiply by 2)" +
-            "\nPress \"6\" for filter (positive numbers)" +
-            "\nPress \"7\" for reduce (sum of all elements)" +
-            "\nPress \"8\" for find first element > 20" +
+            "\nPress \"5\" for map (multiply by 2, for example" +
+            "\nPress \"6\" for filter (positive numbers, for example" +
+            "\nPress \"7\" for reduce (sum of all elements, for example" +
+            "\nPress \"8\" for find first element > your number" +
             "\nPress \"9\" for print your array" +
             "\nPress \"10\" for exit"
         );
