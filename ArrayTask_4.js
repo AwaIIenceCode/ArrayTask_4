@@ -155,7 +155,7 @@ function main()
 
     const actions = 
     {
-        1: { name: "myMin", handler: () => console.log(myMax(userArray)) },
+        1: { name: "myMax", handler: () => console.log(myMax(userArray)) },
         2: { name: "myMin", handler: () => console.log(myMin(userArray)) },
         3: { name: "myArithmeticMean", handler: () => console.log(myArithmeticMean(userArray)) },
         4: { name: "myBubbleSort", handler: () => console.log(myBubbleSort(userArray)) },
